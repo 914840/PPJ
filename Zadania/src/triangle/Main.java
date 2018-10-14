@@ -11,6 +11,34 @@ public class Main {
 		Scanner scanner = new Scanner(System.in);
 		int n = scanner.nextInt() + 1;
 		scanner.close();
+		
+		// tablica tablic tab[] = {tab[],tab[] tab[]...} - deklaracja
+		int[][] tab2D = new int[n][];
+				
+				// Inicjalizacja
+				for(int i=0; i<tab2D.length; i++) {
+					tab2D[i] = new int[i+1];
+					for(int j=0; j<tab2D[i].length; j++) {
+						tab2D[i][j] = j;
+					}
+				}
+				
+				// Wyświetlanie wartości tabeli 
+				for(int[] row : tab2D) {
+					for(int x : row) {
+						if(x == row.length-1) {
+							System.out.print(x + " ");
+						}
+						else {
+							System.out.print(x + ", ");
+						}
+					}
+					System.out.println();
+				}
+		}
+		
+		
+		/************** Metoda 2 ***************
 		int[] tab = new int[n];
 
 		for (int i = 0; i < tab.length; i++) { // n -1
@@ -25,5 +53,6 @@ public class Main {
 				System.out.print(tab[j]);
 			}
 		}
-	}
+		**/
+	
 }
